@@ -19,7 +19,6 @@ checkScope();
 
 console.log("Ejecutando fuera de la función checkScope()");
 console.log(variableGlobal); // 10
-console.log(variableLocal); // undefined
 
 // OPERACIONES LÓGICAS
 

@@ -1,10 +1,12 @@
 function checkAge() {
   let edad = 30;
+  let message = "";
   if (edad >= 18) {
-    console.log("Mayor de edad");
+    message = "Mayor de edad";
   } else {
-    console.log("Menor de edad");
+    message = "Menos de edad";
   }
+  console.log(message);
 }
 
 function checkAgeTernary() {
@@ -94,10 +96,11 @@ for (let prop in perro) {
 CASO PRÁCTICO:
 Necesitas construir dinámicamente una cadena de consulta (query string) con los filtros seleccionados por el usuario.
 */
+
 const filters = {
   category: "books",
   sort: "price",
-  limit: 10
+  limit: 10,
 };
 
 let query = "";
@@ -107,5 +110,3 @@ for (let key in filters) {
 }
 
 console.log(query); // "category=books&sort=price&limit=10&"
-
-
