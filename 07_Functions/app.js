@@ -13,6 +13,26 @@ function add(a, b) {
   return a + b;
 }
 
+// Ejemplo de return sin devolver nada
+// Vamos a crear una función que compruebe errores y tipos de usuario
+
+function handleUsers (error = "Default", userType = "user") {
+
+    if (error === "404") {
+        console.log("Page not found")
+        return
+    } else if (userType !== "admin"){
+        console.log("Sorry you have to be an admin")
+        return
+    }
+
+    console.log("There are no 404 errors and you are an admin")
+
+    return allPasswords
+}
+
+handleUsers("500", "admin")
+
 // PARÁMETROS Y VALORES DE RETORNO:
 
 console.log("PARÁMETROS Y VALORES DE RETORNO")

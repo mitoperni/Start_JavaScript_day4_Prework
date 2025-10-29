@@ -20,12 +20,12 @@ CASO PRÁCTICO:
 Calcular el total de un carrito de compras
 */
 
-let prices = [29.99, 15.50, 99.99, 5.00];
+let prices = [29.99, 15.5, 99.99, 5.0];
 let total = 0;
 
 for (let i = 0; i < prices.length; i++) {
-    total += prices[i];
-    console.log("Producto " + (i + 1) + ": $" + prices[i]);
+  total += prices[i];
+  console.log("Producto " + (i + 1) + ": $" + prices[i]);
 }
 
 console.log("Total a pagar: $" + total); // $150.48
@@ -37,7 +37,7 @@ console.log("MÉTODO FOR...IN");
 let fruits = ["Apple", "Orange", "Banana"];
 
 for (let index in fruits) {
-    console.log(index + ": " + fruits[index]);
+  console.log(index + ": " + fruits[index]);
 }
 
 // Imprime:
@@ -55,7 +55,7 @@ let products = ["Laptop", "Mouse", "Keyboard", "Monitor"];
 console.log("Productos disponibles:");
 
 for (let index in products) {
-    console.log((parseInt(index) + 1) + ". " + products[index]);
+  console.log(parseInt(index) + 1 + ". " + products[index]);
 }
 
 // Imprime:
@@ -72,6 +72,8 @@ console.log("MÉTODO SLICE()");
 fruits = ["Apple", "Orange", "Banana", "Mango", "Grape"];
 
 let someFruits = fruits.slice(1, 4);
+let oneFruit = fruits.slice(1, 2); // === ["Orange"]
+// oneFruit[0] === "Orange"
 
 console.log(someFruits); // ["Orange", "Banana", "Mango"]
 console.log(fruits); // ["Apple", "Orange", "Banana", "Mango", "Grape"]
@@ -82,7 +84,14 @@ CASO PRÁCTICO:
 Sistema de paginación: mostrar solo 3 productos por página
 */
 
-let allProducts = ["Product1", "Product2", "Product3", "Product4", "Product5", "Product6"];
+let allProducts = [
+  "Product1",
+  "Product2",
+  "Product3",
+  "Product4",
+  "Product5",
+  "Product6",
+];
 
 // Página 1: primeros 3 productos
 let page1 = allProducts.slice(0, 3);
@@ -133,6 +142,11 @@ cart.splice(2, 0, "Webcam");
 console.log("Con Webcam agregada:", cart);
 // ["Laptop", "Headset", "Webcam", "Keyboard", "Monitor"]
 
+// Insertar y eliminar
+cart.splice(2, 2, "Computer");
+console.log("Con Computer agregada:", cart);
+// ["Laptop", "Headset", "Computer", "Monitor"]
+
 // MÉTODO SORT() Y REVERSE()
 
 console.log("MÉTODO SORT() Y REVERSE()");
@@ -175,14 +189,14 @@ console.log("ORDENAR NUMEROS");
 numbers = [40, 100, 1, 5, 25, 10];
 
 // Orden ascendente (menor a mayor)
-numbers.sort(function(a, b) {
-    return a - b;
+numbers.sort(function (a, b) {
+  return a - b;
 });
 console.log(numbers); // [1, 5, 10, 25, 40, 100] ✅
 
 // Orden descendente (mayor a menor)
-numbers.sort(function(a, b) {
-    return b - a;
+numbers.sort(function (a, b) {
+  return b - a;
 });
 console.log(numbers); // [100, 40, 25, 10, 5, 1] ✅
 
@@ -191,13 +205,13 @@ CASO PRÁCTICO:
 Ordenar productos por precio (menor a mayor)
 */
 
-prices = [99.99, 15.50, 199.99, 5.00, 49.99];
+prices = [99.99, 15.5, 199.99, 5.0, 49.99];
 
 console.log("Precios originales:", prices);
 
 // Ordenar de menor a mayor
-prices.sort(function(a, b) {
-    return a - b;
+prices.sort(function (a, b) {
+  return a - b;
 });
 
 console.log("Precios de menor a mayor:", prices);
@@ -206,7 +220,7 @@ console.log("Precios de menor a mayor:", prices);
 // Mostrar los 3 más baratos
 console.log("Los 3 más baratos:");
 for (let i = 0; i < 3; i++) {
-    console.log("$" + prices[i]);
+  console.log("$" + prices[i]);
 }
 
 // MÉTODO SORT() EN ARRAY DE EN OBJETOS
@@ -214,14 +228,14 @@ for (let i = 0; i < 3; i++) {
 console.log("MÉTODO SORT() EN ARRAY DE OBJETOS");
 
 students = [
-    {name: "Carlos", age: 25},
-    {name: "Ana", age: 22},
-    {name: "Pedro", age: 28}
+  { name: "Carlos", age: 25 },
+  { name: "Ana", age: 22 },
+  { name: "Pedro", age: 28 },
 ];
 
 // Ordenar por edad
-students.sort(function(a, b) {
-    return a.age - b.age;
+students.sort(function (a, b) {
+  return a.age - b.age;
 });
 
 console.log(students);
@@ -233,23 +247,22 @@ Ordenar productos por año de fabricación
 */
 
 let cars = [
-    {brand: "Volvo", year: 2016},
-    {brand: "Saab", year: 2001},
-    {brand: "BMW", year: 2010}
+  { brand: "Volvo", year: 2016 },
+  { brand: "Saab", year: 2001 },
+  { brand: "BMW", year: 2010 },
 ];
 
 console.log("Coches originales:", cars);
 
 // Ordenar del más antiguo al más nuevo
-cars.sort(function(a, b) {
-    return a.year - b.year;
+cars.sort(function (a, b) {
+  return a.year - b.year;
 });
 
 console.log("Coches ordenados por año:");
 for (let i = 0; i < cars.length; i++) {
-    console.log(cars[i].year + " - " + cars[i].brand);
+  console.log(cars[i].year + " - " + cars[i].brand);
 }
 // 2001 - Saab
 // 2010 - BMW
 // 2016 - Volvo
-
